@@ -1,0 +1,24 @@
+GET http://localhost:4000/todos
+clientKey: this_is_secret
+
+###
+
+POST http://localhost:4000/todos
+clientKey: this_is_secret
+Content-Type: application/json
+
+{
+  "todo": "My todo"
+}
+
+###
+
+DELETE http://localhost:4000/todos/2
+clientKey: this_is_secret
+Content-Type: application/json
+
+###
+
+GET http://localhost:4000/todos/2
+clientKey: this_is_secret
+Content-Type: application/json
