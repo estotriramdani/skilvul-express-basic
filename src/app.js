@@ -1,3 +1,5 @@
+require('dotenv/config');
+
 const express = require('express');
 const tokenChecker = require('./middlewares/tokenChecker');
 const { getTodos, addTodo, destroyTodo, getTodo } = require('./controllers/todos');
