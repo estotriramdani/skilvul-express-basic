@@ -6,11 +6,13 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/todos', getTodos);
-app.post('/todos', tokenChecker, addTodo);
-app.delete('/todos/:id', tokenChecker, destroyTodo);
-app.get('/todos/:id', getTodo);
+app.get('/api/todos', getTodos);
+app.post('/api/todos', tokenChecker, addTodo);
+app.delete('/api/todos/:id', tokenChecker, destroyTodo);
+app.get('/api/todos/:id', getTodo);
 
-app.listen(4000, () => {
-  console.info('App is listening to port:', 4000);
+app.listen(5000, () => {
+  console.info('App is listening to port:', 5000);
 });
+
+module.exports = app;

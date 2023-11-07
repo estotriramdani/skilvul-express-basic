@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "vercel-build": "echo 'vercel-build'"
   },
   "author": "",
   "license": "ISC",
