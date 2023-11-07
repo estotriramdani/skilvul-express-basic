@@ -4,11 +4,12 @@ const sequelize = require('.');
 const TodoModel = sequelize.define('todos', {
   todo: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   isActive: {
-    type: DataTypes.BOOLEAN
-  }
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
+  },
 });
 
 module.exports = TodoModel;
