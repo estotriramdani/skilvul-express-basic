@@ -4,7 +4,7 @@ clientKey: this_is_secret
 ###
 
 POST http://localhost:5000/api/todos
-clientKey: this_is_secret
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVzdG8iLCJwYXNzd29yZCI6InF3ZTEyMyIsImlhdCI6MTY5OTM2MzE4NiwiZXhwIjoxNjk5NDQ5NTg2fQ.DoQXoRPyiamUl6-PzyNdGYsSLf3UWFOb1lKade5ZgqU
 Content-Type: application/json
 
 {
