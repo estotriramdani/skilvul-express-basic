@@ -5,8 +5,8 @@ const TodoModel = require('../../models/Todo');
  * @param {import('express').Response} res
  * @param {import('express').NextFunction} next
  */
-const getTodos = (req, res) => {
-  const allTodos = TodoModel.findAll();
+const getTodos = async (req, res) => {
+  const allTodos = await TodoModel.findAll();
   res.json(allTodos);
 };
 

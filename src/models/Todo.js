@@ -1,17 +1,14 @@
-let todos = [];
+const { DataTypes } = require('sequelize');
+const sequelize = require('.');
 
-const TodoModel = {
-  findAll: () => todos,
-  create: ({ todo }) => {
-    const obj = { id: todos.length + 1, todo };
-    todos.push(obj);
-    return obj;
+const TodoModel = sequelize.define('todos', {
+  todo: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
-  findOne: (id) => todos.find((todo) => todo.id === id),
-  destroy: (id) => {
-    todos = todos.filter((todo) => todo.id !== id);
-    return todos;
-  },
-};
+  isActive: {
+    type: DataTypes.BOOLEAN
+  }
+});
 
 module.exports = TodoModel;
