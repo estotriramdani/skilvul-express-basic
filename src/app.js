@@ -7,12 +7,15 @@ const sequelize = require('./models');
 const tokenChecker = require('./middlewares/tokenChecker');
 const { getTodos, addTodo, destroyTodo, getTodo } = require('./controllers/todos');
 const TodoModel = require('./models/Todo');
+const { login } = require('./controllers/auth');
 
 const app = express();
 
 app.use(cors());
 
 app.use(express.json());
+
+app.post('/api/auth/login', login);
 
 app.get('/api/todos', getTodos);
 app.post('/api/todos', tokenChecker, addTodo);
