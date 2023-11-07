@@ -1,10 +1,13 @@
 require('dotenv/config');
 
 const express = require('express');
+const cors = require('cors');
 const tokenChecker = require('./middlewares/tokenChecker');
 const { getTodos, addTodo, destroyTodo, getTodo } = require('./controllers/todos');
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
