@@ -4,7 +4,7 @@ clientKey: this_is_secret
 ###
 
 POST http://localhost:5000/api/todos
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVzdG8iLCJwYXNzd29yZCI6InF3ZTEyMyIsImlhdCI6MTY5OTM2MzE4NiwiZXhwIjoxNjk5NDQ5NTg2fQ.DoQXoRPyiamUl6-PzyNdGYsSLf3UWFOb1lKade5ZgqU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVzdG8iLCJwYXNzd29yZCI6InF3ZTEyMyIsImlhdCI6MTY5OTUzNDEyMiwiZXhwIjoxNjk5NjIwNTIyfQ.FfHLMOfjvllpzvE7A38QEtrR74aiD3wSVS0V9bjd_9Y
 Content-Type: application/json
 
 {
@@ -13,20 +13,28 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/api/todos/1
-clientKey: this_is_secret
+DELETE http://localhost:5000/api/todos/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVzdG8iLCJwYXNzd29yZCI6InF3ZTEyMyIsImlhdCI6MTY5OTUzNDEyMiwiZXhwIjoxNjk5NjIwNTIyfQ.FfHLMOfjvllpzvE7A38QEtrR74aiD3wSVS0V9bjd_9Y
 Content-Type: application/json
 
 ###
 
-GET http://localhost:5000/api/todos/1
-clientKey: this_is_secret
+GET http://localhost:5000/api/todos/3
 Content-Type: application/json
+
+###
+
+PUT http://localhost:5000/api/todos/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVzdG8iLCJwYXNzd29yZCI6InF3ZTEyMyIsImlhdCI6MTY5OTUzNDEyMiwiZXhwIjoxNjk5NjIwNTIyfQ.FfHLMOfjvllpzvE7A38QEtrR74aiD3wSVS0V9bjd_9Y
+Content-Type: application/json
+
+{
+  "todo": "Editted todo"
+}
 
 ###
 
 POST http://localhost:5000/api/auth/login
-clientKey: this_is_secret
 Content-Type: application/json
 
 {

@@ -71,9 +71,44 @@ const getTodo = async (req, res) => {
   return res.status(200).json(existing);
 };
 
+/**
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ */
+const updateTodo = async (req, res) => {
+  const { id } = req.params;
+  const existing = await TodoModel.findOne({
+    where: {
+      id: id,
+    },
+  });
+
+  if (!existing) {
+    res.status(404).json({
+      status: false,
+      message: 'Todo not found ID: ' + id,
+    });
+    return;
+  }
+
+  const todo = await TodoModel.update(
+    {
+      ...req.body,
+    },
+    {
+      where: {
+        id: id,
+      },
+    }
+  );
+  res.status(203).json(todo);
+};
+
 module.exports = {
   getTodos,
   addTodo,
   destroyTodo,
   getTodo,
+  updateTodo,
 };

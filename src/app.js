@@ -5,7 +5,7 @@ const cors = require('cors');
 const sequelize = require('./models');
 
 const tokenChecker = require('./middlewares/tokenChecker');
-const { getTodos, addTodo, destroyTodo, getTodo } = require('./controllers/todos');
+const { getTodos, addTodo, destroyTodo, getTodo, updateTodo } = require('./controllers/todos');
 const TodoModel = require('./models/Todo');
 const { login } = require('./controllers/auth');
 
@@ -21,6 +21,7 @@ app.get('/api/todos', getTodos);
 app.post('/api/todos', tokenChecker, addTodo);
 app.delete('/api/todos/:id', tokenChecker, destroyTodo);
 app.get('/api/todos/:id', getTodo);
+app.put('/api/todos/:id', updateTodo);
 
 app.listen(5000, () => {
   sequelize
