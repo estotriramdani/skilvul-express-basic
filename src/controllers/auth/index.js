@@ -31,6 +31,7 @@ const login = async (req, res) => {
 
   res.status(201).json({
     token: token,
+    username,
   });
 };
 

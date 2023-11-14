@@ -16,7 +16,7 @@ const getTodos = async (req, res) => {
  * @param {import('express').NextFunction} next
  */
 const addTodo = async (req, res) => {
-  const todo = await TodoModel.create({ todo: req.body.todo });
+  const todo = await TodoModel.create({ todo: req.body.todo, attachment: req.body.attachment });
   res.status(201).json(todo);
 };
 

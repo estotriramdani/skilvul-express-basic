@@ -6,6 +6,10 @@ const TodoModel = sequelize.define('todos', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  attachment: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
   isActive: {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
